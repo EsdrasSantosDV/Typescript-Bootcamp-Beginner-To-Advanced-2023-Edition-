@@ -1,0 +1,12 @@
+
+
+const numbers=[1,2,3,4,5];
+
+numbers.push(4);
+
+console.log(numbers);
+
+//A DIFERENCA DOS ARRAYS DO TYPESCRIPT PRO JAVASCRIPT
+//E QUE AGORA OS ARRAYS TEM IFERENCIA DE TIPO SOMENT EISOS
+//TODOS OS METODOS SÃO OS MESMOS
+numbers.push("Esdras");
