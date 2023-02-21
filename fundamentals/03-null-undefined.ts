@@ -1,6 +1,5 @@
 
 let course = null
-
 // ESSE OPERADOR AQUI ? E O OPERADOR  DE ENCADEAMENTO OPCIONAL
 
 /*
@@ -16,7 +15,19 @@ const tile=course?.textFields?.title ?? "Não tem valor";
 
 console.log(tile);
 
-if(course?.textFields?.title)
-{
-    console.log("title "+course.textFields.title);
+logCourse(course);
+
+function logCourse(course){
+
+    //NÃO FICA R USANDO O OPERADOR DE ENCADEMANETO OPCIONAL TODA HORA
+    //SEMPRE VALDIAR MELHOR
+    if(!course?.textFields){
+        console.log("text Fields not defined");
+        return;
+    }
+    if(course.textFields.title)
+    {
+        console.log("title "+course.textFields.title);
+    }
+
 }
