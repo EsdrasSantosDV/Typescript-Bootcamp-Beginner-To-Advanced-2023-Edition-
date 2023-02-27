@@ -26,6 +26,11 @@ const newCourse = {...course
 //PODEMOS TBM ADICIONAR NOVOS CAMPOS
 console.log(newCourse);
 
+
+
 course.stats.lessonsCount = 100;
 
+console.log(newCourse);
+newCourse.title="MUDEI NO COPIADO";
+console.log(course);
 console.log(newCourse);
