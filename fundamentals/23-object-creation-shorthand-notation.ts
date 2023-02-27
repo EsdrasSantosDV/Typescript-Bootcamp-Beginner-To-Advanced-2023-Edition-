@@ -21,4 +21,4 @@ const course:Course = {
     lessonsCount
 };
 
-
+console.log(course);
