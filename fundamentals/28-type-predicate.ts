@@ -24,6 +24,7 @@ if (isCourse(course)) {
 
 //BASICAMENTE O MELHOR JEITO DE FAZER UM TYPE GUARD, SERIA ESSE
 //Com essa função, é possível verificar com segurança se um valor é do tipo Course antes de utilizá-lo em outras partes do código, o que ajuda a evitar erros de tempo de execução e melhora a qualidade do código.
+//O PREDICATE E UM JEITO DE VERIFICAR SE ESSE OBJETO E UM CURSO, SE ELE NÃO FOR RETORNA FALSE, E A MELHOR FORMA DE 
 function isCourse(value: unknown): value is Course {
     //FAZEMOS UM CASTING PRA TER A PROTECAO DE TIPO
     const course = value as Course
