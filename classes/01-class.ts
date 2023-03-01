@@ -23,8 +23,11 @@ class Course {
         this._title = newTitle;
     }
 
+    //PODEMOS ACESSAR TBM
+    get title() {
+        return this._title;
+    }
 
-    //TEMOS OS COMPORTAMENTOS
 
     //PRA ACESSAR OS VALORES DOS ATRIBUTOS TEMOS O THIS
     age() {
@@ -44,4 +47,5 @@ const course = new Course(
 //AQUI TA CHAMANDO NA VERDADE O SET E LA NO SET ELE VAI VEIRIFICAR
 course.title= "New Value";
 
-console.log(course);
+//AQUI CHAMAMOS O GET
+console.log(course.title);
