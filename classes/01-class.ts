@@ -1,21 +1,14 @@
 class Course {
-    //NO TYPESCRIPT PODEMOS CONSTRUIR AS CLASSES DA MESMA FORMA QUE TAMO ACOSTUMADO
 
-    //COLOCANDO OS ATRIBUTOS
-    //POR PADRAO O MODIFICADOR DE ACESSO E O PUBLICO, ENTÃO NÃO PRECISAMOS DEFINIR PUBLIC ANTES DO ATRIBUTO
-    title:string;
-    subtitle:string;
-    creationDt: Date;
 
-    //TEMOS DA MESMA FORMA O CONSTRUCTOR RESPONSAVEL PELA INICIALIZAÇÃO DA CLASSE
+
+    //PODEMOS TAMBEM JA NO CONSTRUCTOR CRIAR OS ATRIBUTOS E DAR OS MODIFICADORES DE ACESSO A ELES
     constructor(
-        title:string,
-        subtitle:string,
-        creationDt: Date
+        private title:string,
+        private subtitle:string,
+        private creationDt: Date
     ) {
-        this.title = title;
-        this.subtitle = subtitle;
-        this.creationDt = creationDt;
+
     }
 
 
