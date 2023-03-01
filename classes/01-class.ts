@@ -1,4 +1,5 @@
-class Course {
+import {HasId} from "./02-interfaces";
+class Course  implements HasId{
 
     //TEMOS AQUI ATRIBUTOS STATICOS, QUE ESTÃO NO CONTEXTO DA CLASSE
     //E NÃO DAS INSTANCIAS DELA
@@ -11,6 +12,7 @@ class Course {
     //QUANDO COLOCAMOS O MODIFICADOR DE ACESSO PROTECTED, OS ATRIBUTOS E METODOS SO PODEM SER ACESSADOS NO CONTEXTO DENTRO DA CLASSE
     //E NO CONTEXTO DAS FILHAS
     constructor(
+        public id:string,
         protected _title:string,
         protected price:number,
         protected subtitle = "",
@@ -21,6 +23,9 @@ class Course {
         Course.TOTAL_COURSES++;
     }
 
+   //SOMOS OBRIGADOS A IMPLEMENTAR TUDO QUE TEMOS NO CONTRATO BASICMANETE
+    printId() {
+    }
     //PODEMOS UTILZIAR O SET PRA UTILZIAR NUMA VALIDAÇÃO DE ATRIBUIÇÃO
     set title(newTitle:string) {
         if (!newTitle) {
@@ -58,6 +63,8 @@ class Course {
         const ageInMs = new Date().getTime() - this.creationDt.getTime();
         return Math.round(ageInMs / 1000 / 60 / 24);
     }
+
+
 
 }
 
