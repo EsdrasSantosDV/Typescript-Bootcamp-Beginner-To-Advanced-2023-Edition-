@@ -35,6 +35,16 @@ class Course {
     }
 
 
+    //DA MESMA FORMA PODEMOS UTILIZAR E CRIAR METODOS ESTATICOS
+    static printTitle(course: Course) {
+        console.log(`The title of the course ${course.title}`)
+    }
+    static printQuantyCourse()
+    {
+        return this.TOTAL_COURSES;
+    }
+
+
     //PRA ACESSAR OS VALORES DOS ATRIBUTOS TEMOS O THIS
     age() {
         const ageInMs = new Date().getTime() - this.creationDt.getTime();
@@ -57,5 +67,7 @@ course.title= "New Value";
 console.log(course.title);
 
 
-//AS VARIAVIES ESTATICCAS UTILIZANDO O CONTEXTO DA CLASSE, E NÃO DE UMA INSTANCIA ESPECIFICA
-console.log(Course.TYPESCRIPT_TITLE);
+//METODOS ESTAICOS
+Course.printTitle(course);
+
+Course.printQuantyCourse();
