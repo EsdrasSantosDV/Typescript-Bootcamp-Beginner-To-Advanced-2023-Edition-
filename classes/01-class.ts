@@ -7,13 +7,14 @@ class Course {
     //PODEMOS TRANSFORMAR ESSES ATRIBUTOS ESTATICOS, TBM DEE SOMENTE LEITURA
     static readonly TYPESCRIPT_TITLE = "Typescript Bootcamp";
 
-
-
+    //PUBLICO PROTECTED PRIVATE
+    //QUANDO COLOCAMOS O MODIFICADOR DE ACESSO PROTECTED, OS ATRIBUTOS E METODOS SO PODEM SER ACESSADOS NO CONTEXTO DENTRO DA CLASSE
+    //E NO CONTEXTO DAS FILHAS
     constructor(
-        private _title:string,
-        private price:number,
-        private subtitle = "",
-        private creationDt = new Date(2000,1,1)
+        protected _title:string,
+        protected price:number,
+        protected subtitle = "",
+        protected creationDt = new Date(2000,1,1)
     ) {
         this.validate();
 
@@ -36,7 +37,7 @@ class Course {
 
 
     //PODEMOS VALIDAR AS ENTRADAS DO CONSTRUCTOR
-    validate() {
+    protected validate() {
         console.log(`Called Course validate()`);
         if (this.price <=0) {
             throw "Price must be larger than zero";
@@ -75,7 +76,7 @@ class FreeCourse extends Course {
 
     }
 
-    validate() {
+    protected  validate() {
         console.log(`Called FreeCourse validate()`);
 
     }
