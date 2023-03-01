@@ -1,5 +1,6 @@
 import {HasId} from "./02-interfaces";
 import {HasTitle} from "./02-interfaces";
+import {CoursesService} from "./03-singleton";
 
 //BASICAMENTE UTILIZAMOS CLASSES ABSTRACTS PRA UTILIZARMOS ELA COMO TEMPLATES, PARA CONSTRUÇÃO DAS CLASSES CONCRETAS
 //
@@ -24,6 +25,7 @@ abstract class Course implements HasTitle {
         protected creationDt = new Date(2000,1,1)
     ) {
         this.validate();
+        const service = CoursesService.instance();
 
         Course.TOTAL_COURSES++;
     }
@@ -96,8 +98,13 @@ class FreeCourse extends Course {
 
 
 }
+//AQUI UTILIZAMOS A MESMA INTANCIA
+//SO CRIAMOS UMA VEZ
+const angular = new FreeCourse("1", "Angular For Beginners");
 
 
-//TEMOS AQUI A NOSSA INSTANCIA DA NOSSA CLASSE
-const typescript = new Course(Course.TYPESCRIPT_TITLE, 100);
-const angular = new FreeCourse("Angular For Beginners");
+const service = CoursesService.instance();
+
+console.log(service.Metodo1desseservico());
+
+const service2 = CoursesService.instance();
