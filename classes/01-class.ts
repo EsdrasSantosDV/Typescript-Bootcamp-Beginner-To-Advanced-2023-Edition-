@@ -2,16 +2,25 @@ class Course {
 
 
 
-    //PODEMOS TAMBEM JA NO CONSTRUCTOR CRIAR OS ATRIBUTOS E DAR OS MODIFICADORES DE ACESSO A ELES
 
-    //NÃO E PERMITIDO FAZER MULTIPLOS CONSTRUCTORES IGUAL A GENTE FAZ NO JAVA COM PADRAO E DE INICIALIZAÇÃO
-    //MAS MEIO QUE PODEMOS TRONAR OS CAMPOS OPCIONAIS ATRVUINDO VALORES AOS ATRIBUTOS
+    //PODEMOS FAZER UM SET E UM GET, MAS PRO COMPILADOR NÃO CONFUDIR SE ESTAMOS CHAMANDO O TITLE OU SE ESTAMOS CHAMANDO O SET
     constructor(
-        private title: string,
-        private subtitle="",
-        private creationDt=new Date(2000,1,1)
+        //SE TIVESSEMSO COLCOADO private title:string
+        //ACABARIA NO CASO QUE FALEI ACIMA, QUE O COMPILADOR IA FICAR BUGADO
+        private _title:string,
+        private subtitle:string,
+        private creationDt: Date
     ) {
 
+    }
+
+    //PODEMOS UTILZIAR O SET PRA UTILZIAR NUMA VALIDAÇÃO DE ATRIBUIÇÃO
+    set title(newTitle:string) {
+        if (!newTitle) {
+            throw "Title cannot be empty";
+        }
+
+        this._title = newTitle;
     }
 
 
@@ -32,10 +41,7 @@ const course = new Course(
     new Date(2000,1,1));
 
 
-const course2 = new Course(
-    "Typescript Bootcamp","sadasasd");
+//AQUI TA CHAMANDO NA VERDADE O SET E LA NO SET ELE VAI VEIRIFICAR
+course.title= "New Value";
 
-//E A CHAMADA DO METODO DO MESMO JEITO QUE E NO JAVA
-console.log(course.age())
-
-
+console.log(course);
