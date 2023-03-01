@@ -37,6 +37,7 @@ class Course {
 
     //PODEMOS VALIDAR AS ENTRADAS DO CONSTRUCTOR
     validate() {
+        console.log(`Called Course validate()`);
         if (this.price <=0) {
             throw "Price must be larger than zero";
         }
@@ -59,6 +60,30 @@ class Course {
 
 }
 
+
+//AQUI EXTENDEMOS TODOS OS ATRIBUTOS E COMPORTAMENTOS DO PAI
+class FreeCourse extends Course {
+
+
+    constructor( title:string,
+                 subtitle = "",
+                 creationDt = new Date(2000,1,1)) {
+
+
+        //COMO SUPER, INICIALIZAMOS O DO PAI
+        super(title, 0, subtitle, creationDt);
+
+    }
+
+    validate() {
+        console.log(`Called FreeCourse validate()`);
+
+    }
+
+
+}
+
+
 //TEMOS AQUI A NOSSA INSTANCIA DA NOSSA CLASSE
 const typescript = new Course(Course.TYPESCRIPT_TITLE, 100);
-const angular = new Course("Angular For Beginners", 10);
+const angular = new FreeCourse("Angular For Beginners");
