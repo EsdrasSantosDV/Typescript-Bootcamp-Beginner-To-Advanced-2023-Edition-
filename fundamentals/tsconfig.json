@@ -23,6 +23,11 @@
     construa e implante seu programa como de costume, enquanto você espera pelas novas versões dos tipos, vamos agora
     continue a explorar o que mais podemos fazer com as configurações e o arquivo de configuração.
     */
+    "sourceMap": true,
+    "noEmitOnError": true,
+    "strictNullChecks": true,
+    "removeComments": true,
+  //podemos REMOVER COMENTARIOS, VERIFICAR NULLABILIDADE, CRIAR SOURCES MAPS,EMISSÃO DE ERROS, TUDO NO ARQUVIO TYPESCRIPT
 
   },
   "files": [
