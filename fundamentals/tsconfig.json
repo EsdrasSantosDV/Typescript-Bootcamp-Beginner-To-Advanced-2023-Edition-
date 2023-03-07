@@ -14,7 +14,16 @@
     //não estamos usando um caminho de importação relativo
     //import {addCourse, PAGE_SIZE} from "./13-exports-module";
     //ESSE ./ E UM CAMINHO RELATIVO
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "skipLibCheck": true,
+    /*
+    E quando esta propriedade for definida como true, o compilador TypeScript não verificará a validade dos tipos.
+    Portanto, se houver pequenos erros de compilação nos tipos porque eles ainda não foram atualizados para o último
+    versão TypeScript, pelo menos sua compilação não vai quebrar e você ainda poderá
+    construa e implante seu programa como de costume, enquanto você espera pelas novas versões dos tipos, vamos agora
+    continue a explorar o que mais podemos fazer com as configurações e o arquivo de configuração.
+    */
+
   },
   "files": [
     "src/01-why-typescript.ts"
