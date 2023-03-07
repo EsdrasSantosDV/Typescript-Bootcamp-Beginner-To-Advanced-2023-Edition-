@@ -10,8 +10,11 @@
     "outDir": "dist",
 //    O IDEAL E SEMPRE UTILIZAR O COMMON JS
     "module": "CommonJS",
-
-
+    //BASE URL E isso vai apontar para o diretório onde as importações em nosso programa devem apontar caso isso
+    //não estamos usando um caminho de importação relativo
+    //import {addCourse, PAGE_SIZE} from "./13-exports-module";
+    //ESSE ./ E UM CAMINHO RELATIVO
+    "baseUrl": "src"
   },
   "files": [
     "src/01-why-typescript.ts"
